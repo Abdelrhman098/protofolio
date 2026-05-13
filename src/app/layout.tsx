@@ -44,6 +44,12 @@ export const metadata: Metadata = {
     description:
       "Backend Engineering · Fintech Systems · Trading Platforms · Modern Web Applications",
   },
+  metadataBase: new URL("https://abdelrhman098.github.io/protofolio"),
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
   robots: {
     index: true,
     follow: true,
