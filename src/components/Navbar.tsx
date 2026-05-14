@@ -53,6 +53,7 @@ export default function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        role="navigation"
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
             ? "glass-strong shadow-lg shadow-black/20"
@@ -72,11 +73,10 @@ export default function Navbar() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="text-xl sm:text-2xl font-bold gradient-text">
-                AT
-              </span>
-              <span className="text-xl sm:text-2xl font-light text-muted ml-0.5">
-                .dev
+              <span className="navbar-brand">
+                <span className="navbar-brand-name">Abdelrhman</span>
+                <span className="navbar-brand-dot">.</span>
+                <span className="navbar-brand-ext">dev</span>
               </span>
             </motion.a>
 
@@ -116,6 +116,7 @@ export default function Navbar() {
               onClick={() => setMobileOpen(!mobileOpen)}
               className="md:hidden p-2 text-muted hover:text-foreground transition-colors"
               aria-label="Toggle navigation menu"
+              aria-expanded={mobileOpen}
             >
               {mobileOpen ? <HiX size={24} /> : <HiMenuAlt3 size={24} />}
             </button>

@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
 import SectionHeading from "./SectionHeading";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import {
   HiOutlineTrendingUp,
   HiOutlineChartBar,
@@ -138,7 +137,7 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: i * 0.1 }}
-            whileHover={{ y: -6 }}
+            whileHover={{ y: -8, scale: 1.01 }}
             className="glass rounded-2xl overflow-hidden card-hover group flex flex-col"
           >
             {/* Card Header with Icon */}
@@ -196,36 +195,18 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
-
-              {/* Action Buttons */}
-              <div className="flex gap-3">
-                <motion.a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-white/[0.05] text-muted hover:text-foreground hover:bg-white/[0.1] border border-white/[0.08] transition-all"
-                >
-                  <FaGithub className="w-4 h-4" />
-                  Code
-                </motion.a>
-                <motion.a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg text-white/90 transition-all"
-                  style={{
-                    background: `linear-gradient(135deg, ${project.accentColor}40, ${project.accentColor}20)`,
-                    borderColor: `${project.accentColor}30`,
-                    borderWidth: "1px",
-                  }}
-                >
-                  <FaExternalLinkAlt className="w-3 h-3" />
-                  Preview
-                </motion.a>
+              <div className="relative overflow-hidden rounded-3xl border border-white/[0.06] bg-white/[0.02] p-4 transition-all duration-300 group-hover:border-primary/20 group-hover:bg-white/[0.08]">
+                <div className="text-[11px] uppercase tracking-[0.18em] text-muted mb-2">
+                  Fintech system focus
+                </div>
+                <div className="text-xs text-muted leading-relaxed">
+                  Explore premium design, realtime performance, and scalable architecture through each featured project.
+                </div>
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center opacity-0 translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                  <span className="rounded-full border border-white/[0.08] bg-white/[0.05] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-white/75">
+                    View details on hover
+                  </span>
+                </div>
               </div>
             </div>
           </motion.div>
